@@ -6,6 +6,10 @@ var c = document.querySelector('#computer');
 var y = document.querySelector('#you');
 
 
+//  the Popup
+let endMatch = document.querySelector('.endMatch');
+
+
 c.innerHTML = localStorage.getItem('ComputerScore') || 0;
 y.innerHTML = localStorage.getItem('YourScore') || 0;
 
@@ -13,37 +17,37 @@ y.innerHTML = localStorage.getItem('YourScore') || 0;
 //  Function to Return string for the match status
 const status = (a, b) => {
     if (a == 'scissor' && b == 'paper' || a == 'paper' && b == 'scissor') {
-        return "Scissors cuts Paper" + " " + a + b;
+        return "Scissors cuts Paper";
     }
     if (a == 'paper' && b == 'rock' || a == 'rock' && b == 'paper') {
-        return "Paper covers Rock" + " " + a + b;
+        return "Paper covers Rock";
     }
     if (a == 'rock' && b == 'lizard' || a == 'lizard' && b == 'rock') {
-        return "Rock crushes Lizard" + " " + a + b;
+        return "Rock crushes Lizard";
     }
     if (a == 'lizard' && b == 'spock' || a == 'spock' && b == 'lizard') {
-        return "Lizard poisons Spock" + " " + a + b;
+        return "Lizard poisons Spock";
     }
     if (a == 'spock' && b == 'scissor' || a == 'scissor' && b == 'spock') {
-        return "Spock smashes Scissors" + " " + a + b;
+        return "Spock smashes Scissors";
     }
     if (a == 'scissor' && b == 'lizard' || a == 'lizard' && b == 'scissor') {
-        return "Scissors decapitates Lizard" + " " + a + b;
+        return "Scissors decapitates Lizard";
     }
     if (a == 'lizard' && b == 'paper' || a == 'paper' && b == 'lizard') {
-        return "Lizard eats Paper" + " " + a + b;
+        return "Lizard eats Paper";
     }
     if (a == 'paper' && b == 'spock' || a == 'spock' && b == 'paper') {
-        return "Paper disproves Spock" + " " + a + b;
+        return "Paper disproves Spock";
     }
     if (a == 'spock' && b == 'rock' || a == 'rock' && b == 'spock') {
-        return "Spock vaporizes Rock" + " " + a + b;
+        return "Spock vaporizes Rock";
     }
     if (a == 'rock' && b == 'scissor' || a == 'scissor' && b == 'rock') {
-        return "Rock crushes Scissors" + " " + a + b;
+        return "Rock crushes Scissors";
     }
     if (a == b) {
-        return "it's a tie" + " " + a + b;
+        return "You and the Computer choose the same thing";
     }
     // console.log(a + b)
 }
@@ -63,7 +67,28 @@ const pc = () => {
         return "spock"
     }
 }
+const showCard = (text, status) => {
+    const won = "You Won!"
+    const lost = "You Lose!"
+    const tie = "It's a Draw!"
 
+    if (status == 'won') {
+        document.querySelector('.card-content > h4').innerHTML = won;
+        document.querySelector('.card-content > p').innerHTML = text;
+        endMatch.classList.add('show', 'won')
+    }
+    if (status == 'lost') {
+        document.querySelector('.card-content > h4').innerHTML = lost;
+        document.querySelector('.card-content > p').innerHTML = text;
+        endMatch.classList.add('show', 'lost')
+    }
+
+    if (status == 'tie') {
+        document.querySelector('.card-content > h4').innerHTML = tie;
+        document.querySelector('.card-content > p').innerHTML = text;
+        endMatch.classList.add('show', 'tie')
+    }
+}
 
 document.addEventListener('click', (event) => {
     if (event.target.classList.contains('btn')) {
@@ -73,10 +98,10 @@ document.addEventListener('click', (event) => {
         // h.innerHTML = humain;
         h.id = humain;
         // check If it's a tie
-        console.log(status(p.id, h.id))
 
         if (p.id == humain) {
             // console.log("this is a tie")
+            showCard(status(p.id, h.id), "tie")
         } else {
             // list all the win cases for the PC
             if (
@@ -94,14 +119,17 @@ document.addEventListener('click', (event) => {
             ) {
                 // console.log("PC WIN ");
                 c.innerHTML++;
+                showCard(status(p.id, h.id), "lost")
                 localStorage.setItem('ComputerScore', c.innerHTML)
                     // If not than Player Wins
             } else {
                 // console.log("hunmai WIN");
+                showCard(status(p.id, h.id), "won")
                 y.innerHTML++;
                 localStorage.setItem('YourScore', y.innerHTML)
             }
         }
+
         // add class for the winning team
         if (Number(y.innerHTML) > Number(c.innerHTML)) {
             // console.log('debugY:' + y.innerHTML + "." + c.innerHTML)
@@ -147,9 +175,7 @@ rules.addEventListener('click', () => {
 
 
 
-//  the Popup
-let endMatch = document.querySelector('.endMatch');
 // let showRules = document.querySelector('#showRules');
 endMatch.addEventListener('click', () => {
-    endMatch.classList.remove('show')
+    endMatch.classList.remove('show', 'lost', 'won', 'tie')
 })
