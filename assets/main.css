@@ -11,7 +11,7 @@ body {
   color: #fff !important;
 }
 
-header {
+.main--wrapper > header {
   padding: 20px;
   border-bottom: 3px solid #fff;
   text-align: center;
@@ -334,22 +334,78 @@ h1 + span.win {
   overflow: hidden;
 }
 
+.endMatch.won header {
+  background-color: #fdd736;
+}
+
+.endMatch.won header span {
+  background-image: url("/images/add.png") !important;
+}
+
+.endMatch.lost header {
+  background-color: #e6646e;
+}
+
+.endMatch.lost header span {
+  background-image: url("/images/angry.png") !important;
+}
+
+.endMatch.tie header {
+  background-color: #afafaf;
+}
+
+.endMatch.tie header span {
+  background-image: url("/images/caution.png") !important;
+}
+
 .endMatch .popUP {
   background-color: #15133c;
-  border: 3px solid #fff;
-  padding: 30px 10px;
-  min-height: 100px;
-  min-width: 500px;
+  min-height: 500px;
+  min-width: 400px;
   max-width: 90vw;
   border-radius: 15px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 146px 7px #00000057;
+          box-shadow: 0 0 146px 7px #00000057;
 }
 
-.endMatch .popUP h4 {
-  font-size: calc(10px + 1vw);
-  margin-bottom: 10px;
+.endMatch .popUP header {
+  min-height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-.endMatch .popUP p {
+.endMatch .popUP header span {
+  display: block;
+  width: 170px;
+  height: 170px;
+  background: #15133c;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: -70px;
+}
+
+.endMatch .popUP .card-content {
+  margin-top: 120px;
+}
+
+.endMatch .popUP .card-content h4 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.endMatch .popUP .card-content p {
+  color: #999;
   margin-bottom: 20px;
 }
 
