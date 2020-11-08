@@ -85,11 +85,35 @@ header {
   background-size: contain !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  justify-items: center;
   cursor: pointer;
-  display: block;
+  display: -ms-grid;
+  display: grid;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   padding: 10px;
+}
+
+.player--options div > span::after {
+  padding: 5px 0;
+  width: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  border-top: 2px solid #5fc5ba;
+  border-bottom: 2px solid #5fc5ba;
+  color: #5fc5ba;
+  text-transform: uppercase;
+  font-weight: bold;
+  -webkit-transition: .4s;
+  transition: .4s;
+  text-align: center;
+  background-color: #15133c;
 }
 
 .player--options div > span:hover {
@@ -98,6 +122,10 @@ header {
   -webkit-transform: scale(1.5) !important;
           transform: scale(1.5) !important;
   opacity: 1 !important;
+}
+
+.player--options div > span:hover::after {
+  width: 100px !important;
 }
 
 .player--options div > span:active {
@@ -113,37 +141,68 @@ header {
   padding: 10px;
 }
 
-.player--options span#rock,
-.player--options .h#rock {
+span#rock,
+.h#rock,
+.p#rock {
   background-image: url("/images/rock.png");
 }
 
-.player--options span#paper,
-.player--options .h#paper {
+span#paper,
+.h#paper,
+.p#paper {
   background-image: url("/images/paper.png");
 }
 
-.player--options span#scissor,
-.player--options .h#scissor {
+span#scissor,
+.h#scissor,
+.p#scissor {
   background-image: url("/images/scissors.png");
 }
 
-.player--options span#lizard,
-.player--options .h#lizard {
+span#lizard,
+.h#lizard,
+.p#lizard {
   background-image: url("/images/lizard.png");
 }
 
-.player--options span#spock,
-.player--options .h#spock {
+span#spock,
+.h#spock,
+.p#spock {
   background-image: url("/images/spock.png");
 }
 
-.player--options .h {
+span#rock::after {
+  content: "rock";
+}
+
+span#paper::after {
+  content: "paper";
+}
+
+span#scissor::after {
+  content: "scissor";
+}
+
+span#lizard::after {
+  content: "lizard";
+}
+
+span#spock::after {
+  content: "spock";
+}
+
+.h,
+.p {
   width: 50%;
   height: 40vh;
   display: block;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.p {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 /*# sourceMappingURL=main.css.map */

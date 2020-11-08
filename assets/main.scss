@@ -71,14 +71,34 @@ header {
         background-size: contain !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
+        justify-content: center;
+        align-items: flex-end;
+        justify-items: center;
         cursor: pointer;
-        display: block;
+        display: grid;
         transition: 0.5s;
         padding: 10px;
+        &::after {
+            padding: 5px 0;
+            width: 0;
+            overflow: hidden;
+            border-radius: 4px;
+            border-top: 2px solid #5fc5ba;
+            border-bottom: 2px solid #5fc5ba;
+            color: #5fc5ba;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: .4s;
+            text-align: center;
+            background-color: #15133c;
+        }
         &:hover {
             transition: 0.3s;
             transform: scale(1.5) !important;
             opacity: 1 !important;
+            &::after {
+                width: 100px !important;
+            }
         }
         &:active {
             transform: scale(1.8) !important;
@@ -94,32 +114,69 @@ header {
             }
         }
     }
-    span#rock,
-    .h#rock {
-        background-image: url('/images/rock.png');
-    }
-    span#paper,
-    .h#paper {
-        background-image: url('/images/paper.png');
-    }
-    span#scissor,
-    .h#scissor {
-        background-image: url('/images/scissors.png');
-    }
-    span#lizard,
-    .h#lizard {
-        background-image: url('/images/lizard.png');
-    }
-    span#spock,
-    .h#spock {
-        background-image: url('/images/spock.png');
-    }
-    .h {
-        width: 50%;
-        height: 40vh;
-        display: block;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
+}
+
+span#rock,
+.h#rock,
+.p#rock {
+    background-image: url('/images/rock.png');
+}
+
+span#paper,
+.h#paper,
+.p#paper {
+    background-image: url('/images/paper.png');
+}
+
+span#scissor,
+.h#scissor,
+.p#scissor {
+    background-image: url('/images/scissors.png');
+}
+
+span#lizard,
+.h#lizard,
+.p#lizard {
+    background-image: url('/images/lizard.png');
+}
+
+span#spock,
+.h#spock,
+.p#spock {
+    background-image: url('/images/spock.png');
+}
+
+// add the hover title
+span#rock::after {
+    content: "rock";
+}
+
+span#paper::after {
+    content: "paper";
+}
+
+span#scissor::after {
+    content: "scissor";
+}
+
+span#lizard::after {
+    content: "lizard";
+}
+
+span#spock::after {
+    content: "spock";
+}
+
+.h,
+.p {
+    width: 50%;
+    height: 40vh;
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.p {
+    transform: scaleX(-1);
 }
