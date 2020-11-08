@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rock Paper Scissors Lizard Spock</title>
+    <link rel="stylesheet" href="/assets/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="rules">
+        <img src="/images/howToPlay.png" alt="how To Play Rock Paper Scissors Lizard Spock">
+    </div>
+    <section class="main--wrapper">
+        <header>
+            <h1>Rock Paper Scissors Lizard Spock</h1>
+            <div class="how-to--play">
+                <button id="showRules" class="btn-main">
+					What's the Rules
+				</button>
+            </div>
+        </header>
+    </section>
+    <section class="main--wrapper">
+        <div class="main-grid center">
+            <div>
+                <h1>
+                    The Computer
+                </h1>
+                <span id="computer">0</span>
+            </div>
+            <div>
+                <h1>
+                    You!
+                </h1>
+                <span id="you">0</span>
+            </div>
+        </div>
+    </section>
+    <section class="main--wrapper">
+        <div class="main-grid">
+            <div>
+
+            </div>
+            <div class="player--options">
+                <div class="player--output">
+                    <h5><span class="h"> </span> </h5>
+
+                </div>
+                <div class="inner-player--option">
+                    <span class="btn" id="rock"></span>
+                    <span class="btn" id="paper"></span>
+                    <span class="btn" id="scissor"></span>
+                    <span class="btn" id="lizard"></span>
+                    <span class="btn" id="spock"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <p class="o"></p>
+
+    <h5>the pc: <span class="p"></span> </h5>
+    <div>
+        score collector
+
+
+    </div>
+    <button id="reset"> reset</button>
+    <script src="/assets/main.js"></script>
+</body>
+
+</html>
