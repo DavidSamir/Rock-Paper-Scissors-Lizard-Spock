@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #15133c;
+    color: #fff !important;
+}
+
+header {
+    padding: 20px;
+    border-bottom: 3px solid #fff;
+    text-align: center;
+}
+
+#rules {
+    position: absolute;
+    width: 100vw;
+    overflow: hidden;
+    height: 0;
+    background-color: #00000050;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    transition: .4s ease-in-out;
+    img {
+        padding: 10px;
+        max-height: 80vh;
+    }
+}
+
+#rules.full {
+    height: 100vh;
+}
+
+.main--wrapper {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.btn-main {
+    background-color: transparent;
+    padding: 10px 25px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 550;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.center {
+    text-align: center;
+}
+
+.player--options {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    border-left: 2px solid #fff;
+    div>span {
+        width: 100px;
+        height: 100px;
+        background-size: contain !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        cursor: pointer;
+        display: block;
+        transition: 0.5s;
+        padding: 10px;
+        &:hover {
+            transition: 0.3s;
+            transform: scale(1.5) !important;
+            opacity: 1 !important;
+        }
+        &:active {
+            transform: scale(1.8) !important;
+            padding: 0;
+        }
+    }
+    .inner-player--option {
+        &:hover {
+            span {
+                opacity: .7;
+                transform: scale(0.8);
+                padding: 10px;
+            }
+        }
+    }
+    span#rock,
+    .h#rock {
+        background-image: url('/images/rock.png');
+    }
+    span#paper,
+    .h#paper {
+        background-image: url('/images/paper.png');
+    }
+    span#scissor,
+    .h#scissor {
+        background-image: url('/images/scissors.png');
+    }
+    span#lizard,
+    .h#lizard {
+        background-image: url('/images/lizard.png');
+    }
+    span#spock,
+    .h#spock {
+        background-image: url('/images/spock.png');
+    }
+    .h {
+        width: 50%;
+        height: 40vh;
+        display: block;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}

@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #15133c;
+  color: #fff !important;
+}
+
+header {
+  padding: 20px;
+  border-bottom: 3px solid #fff;
+  text-align: center;
+}
+
+#rules {
+  position: absolute;
+  width: 100vw;
+  overflow: hidden;
+  height: 0;
+  background-color: #00000050;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+}
+
+#rules img {
+  padding: 10px;
+  max-height: 80vh;
+}
+
+#rules.full {
+  height: 100vh;
+}
+
+.main--wrapper {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.btn-main {
+  background-color: transparent;
+  padding: 10px 25px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 550;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.main-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.center {
+  text-align: center;
+}
+
+.player--options {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  border-left: 2px solid #fff;
+}
+
+.player--options div > span {
+  width: 100px;
+  height: 100px;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  cursor: pointer;
+  display: block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding: 10px;
+}
+
+.player--options div > span:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: scale(1.5) !important;
+          transform: scale(1.5) !important;
+  opacity: 1 !important;
+}
+
+.player--options div > span:active {
+  -webkit-transform: scale(1.8) !important;
+          transform: scale(1.8) !important;
+  padding: 0;
+}
+
+.player--options .inner-player--option:hover span {
+  opacity: .7;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  padding: 10px;
+}
+
+.player--options span#rock,
+.player--options .h#rock {
+  background-image: url("/images/rock.png");
+}
+
+.player--options span#paper,
+.player--options .h#paper {
+  background-image: url("/images/paper.png");
+}
+
+.player--options span#scissor,
+.player--options .h#scissor {
+  background-image: url("/images/scissors.png");
+}
+
+.player--options span#lizard,
+.player--options .h#lizard {
+  background-image: url("/images/lizard.png");
+}
+
+.player--options span#spock,
+.player--options .h#spock {
+  background-image: url("/images/spock.png");
+}
+
+.player--options .h {
+  width: 50%;
+  height: 40vh;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/*# sourceMappingURL=main.css.map */
