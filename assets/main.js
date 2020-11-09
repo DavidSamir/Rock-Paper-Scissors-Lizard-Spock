@@ -62,17 +62,32 @@ document.addEventListener('click', (event) => {
                 localStorage.setItem('YourScore', y.innerHTML)
             }
         }
+        // add class for the winning team
+        if (y.innerHTML > c.innerHTML) {
+            y.classList.add("win");
+            c.classList.remove("win");
+        } else {
+            c.classList.add("win");
+            y.classList.remove("win");
+        }
+
     }
 })
 
 
 i.addEventListener('click', () => {
+    //set the score to Zero in HTML
     c.innerHTML = '0';
     y.innerHTML = '0';
+    //set the score to Zero in localStorage
     localStorage.setItem('ComputerScore', '0');
     localStorage.setItem('YourScore', '0');
+    // remove the image
     p.id = null;
     h.id = null;
+    //remove the won Class
+    c.classList.remove("win");
+    y.classList.remove("win");
 })
 
 
