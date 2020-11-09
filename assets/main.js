@@ -31,7 +31,7 @@ document.addEventListener('click', (event) => {
     if (event.target.classList.contains('btn')) {
         const humain = (event.path[0].id);
         p.id = pc();
-        p.innerHTML = p.id;
+        // p.innerHTML = p.id;
         // h.innerHTML = humain;
         h.id = humain;
         // check If it's a tie
@@ -71,6 +71,8 @@ i.addEventListener('click', () => {
     y.innerHTML = '0';
     localStorage.setItem('ComputerScore', '0');
     localStorage.setItem('YourScore', '0');
+    p.id = null;
+    h.id = null;
 })
 
 
