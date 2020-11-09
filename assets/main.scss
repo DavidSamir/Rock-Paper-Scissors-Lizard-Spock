@@ -146,31 +146,56 @@ span#spock,
     background-image: url('/images/spock.png');
 }
 
+.h#rock,
+.p#rock {
+    background-image: url('/images/rock-name.png');
+}
+
+.h#paper,
+.p#paper {
+    background-image: url('/images/paper-name.png');
+}
+
+.h#scissor,
+.p#scissor {
+    background-image: url('/images/scissor-name.png');
+}
+
+.h#lizard,
+.p#lizard {
+    background-image: url('/images/lizard-name.png');
+}
+
+.h#spock,
+.p#spock {
+    background-image: url('/images/spock-name.png');
+}
+
 // add the hover title
-span#rock::after {
-    content: "rock";
-}
-
-span#paper::after {
-    content: "paper";
-}
-
-span#scissor::after {
-    content: "scissor";
-}
-
-span#lizard::after {
-    content: "lizard";
-}
-
-span#spock::after {
-    content: "spock";
+.inner-player--option {
+    span#rock::after {
+        content: "rock";
+    }
+    span#paper::after {
+        content: "paper";
+    }
+    span#scissor::after {
+        content: "scissor";
+    }
+    span#lizard::after {
+        content: "lizard";
+    }
+    span#spock::after {
+        content: "spock";
+    }
 }
 
 .h,
 .p {
     width: 50%;
+    max-width: 300px;
     height: 40vh;
+    margin: 0 auto;
     display: block;
     background-position: center;
     background-repeat: no-repeat;
@@ -178,5 +203,5 @@ span#spock::after {
 }
 
 .p {
-    transform: scaleX(-1);
+    // transform: scaleX(-1);
 }
