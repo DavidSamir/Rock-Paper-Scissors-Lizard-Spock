@@ -6,8 +6,8 @@ var c = document.querySelector('#computer');
 var y = document.querySelector('#you');
 
 
-c.innerHTML = localStorage.getItem('ComputerScore');
-y.innerHTML = localStorage.getItem('YourScore');
+c.innerHTML = localStorage.getItem('ComputerScore') || 0;
+y.innerHTML = localStorage.getItem('YourScore') || 0;
 
 
 //  Function to Return random option 
