@@ -26,9 +26,49 @@ header {
     justify-content: center;
     align-items: center;
     transition: .4s ease-in-out;
+    .main-grid {
+        background-color: #15133c;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        .howToPlay {
+            padding: 47px 50px;
+            height: 100%;
+            // border: 3px solid #ffffff30;
+            // border-radius: 8px;
+            display: grid;
+            align-items: center;
+            align-content: center;
+            h3 {
+                padding-bottom: 10px;
+                border-bottom: 2px solid #fff;
+            }
+            ul {
+                padding-top: 15px;
+                li {
+                    list-style: inside;
+                    padding: 10px 0 0;
+                }
+            }
+        }
+    }
     img {
-        padding: 10px;
+        // padding: 10px;
         max-height: 80vh;
+    }
+    footer {
+        padding: 20px 0 0;
+        a {
+            color: #5fc5ba;
+        }
+        h6 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid;
+            padding-bottom: 7px;
+            display: inline-block;
+            // padding-right: 15px;
+            margin-top: 10px;
+        }
     }
 }
 
@@ -41,15 +81,24 @@ header {
     margin: 0 auto;
 }
 
+.scoreTotal {
+    margin-top: 20px;
+    margin-bottom: -30px;
+    h1 {
+        font-size: calc(20px + 2vw);
+    }
+}
+
 .btn-main {
     background-color: transparent;
-    padding: 10px 25px;
+    padding: 10px 35px;
     border: 2px solid #fff;
     border-radius: 4px;
     color: #fff;
-    font-weight: 550;
-    margin: 10px;
     cursor: pointer;
+    font-size: 27px;
+    font-weight: bold;
+    margin: 40px auto 10px;
 }
 
 .main-grid {
@@ -200,6 +249,22 @@ span#spock,
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+h1+span {
+    font-size: 50px;
+    font-weight: bold;
+    padding: 12px 50px;
+    display: block;
+    border: 4px solid #ffffff50;
+    display: inline-block;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+h1+span.win {
+    background: #0192c0;
+    border: transparent;
 }
 
 .p {
