@@ -101,6 +101,16 @@ header {
     margin: 40px auto 10px;
 }
 
+.btn-primary {
+    padding: 10px 20px;
+    background-color: #5fc5ba;
+    color: #15133c;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid #ffffff50;
+}
+
 .main-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -269,4 +279,40 @@ h1+span.win {
 
 .p {
     // transform: scaleX(-1);
+}
+
+.endMatch {
+    width: 100vw;
+    height: 0;
+    // height: 100vh;
+    // transition: .5s;
+    background-color: #15133c90;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    .popUP {
+        background-color: #15133c;
+        border: 3px solid #fff;
+        padding: 30px 10px;
+        min-height: 100px;
+        min-width: 500px;
+        max-width: 90vw;
+        border-radius: 15px;
+        h4 {
+            font-size: calc(10px + 1vw);
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.endMatch.show {
+    height: 100vh;
 }

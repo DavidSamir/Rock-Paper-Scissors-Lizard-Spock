@@ -10,6 +10,44 @@ c.innerHTML = localStorage.getItem('ComputerScore') || 0;
 y.innerHTML = localStorage.getItem('YourScore') || 0;
 
 
+//  Function to Return string for the match status
+const status = (a, b) => {
+    if (a == 'scissor' && b == 'paper' || a == 'paper' && b == 'scissor') {
+        return "Scissors cuts Paper";
+    }
+    if (a == 'paper' && b == 'rock' || a == 'rock' && b == 'paper') {
+        return "Paper covers Rock";
+    }
+    if (a == 'rock' && b == 'lizard' || a == 'lizard' && b == 'rock') {
+        return "Rock crushes Lizard";
+    }
+    if (a == 'lizard' && b == 'spock' || a == 'spock' && b == 'lizard') {
+        return "Lizard poisons Spock";
+    }
+    if (a == 'spock' && b == 'scissor' || a == 'scissor' && b == 'spock') {
+        return "Spock smashes Scissors";
+    }
+    if (a == 'scissor' && b == 'lizard' || a == 'lizard' && b == 'scissor') {
+        return "Scissors decapitates Lizard";
+    }
+    if (a == 'lizard' && b == 'paper' || a == 'paper' && b == 'lizard') {
+        return "Lizard eats Paper";
+    }
+    if (a == 'paper' && b == 'spock' || a == 'spock' && b == 'paper') {
+        return "Paper disproves Spock";
+    }
+    if (a == 'spock' && b == 'rock' || a == 'rock' && b == 'spock') {
+        return "Spock vaporizes Rock";
+    }
+    if (a == 'rock' && b == 'scissor' || a == 'scissor' && b == 'rock') {
+        return "Rock crushes Scissors";
+    }
+    if (a == b) {
+        return "it's a tie"
+    }
+    // console.log(a + b)
+}
+
 //  Function to Return random option 
 const pc = () => {
     let RandomVal = Math.floor(Math.random() * 5 + 1);
@@ -53,6 +91,7 @@ document.addEventListener('click', (event) => {
                 p.id == 'lizard' && h.id == "paper"
             ) {
                 // console.log("PC WIN ");
+                console.log(status(p.id, h.id))
                 c.innerHTML++;
                 localStorage.setItem('ComputerScore', c.innerHTML)
                     // If not than Player Wins
@@ -100,4 +139,14 @@ showRules.addEventListener('click', () => {
 })
 rules.addEventListener('click', () => {
     rules.classList.remove('full')
+})
+
+
+
+
+//  the Popup
+let endMatch = document.querySelector('.endMatch');
+// let showRules = document.querySelector('#showRules');
+endMatch.addEventListener('click', () => {
+    endMatch.classList.remove('show')
 })
