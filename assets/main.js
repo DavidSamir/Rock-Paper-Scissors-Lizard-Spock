@@ -13,37 +13,37 @@ y.innerHTML = localStorage.getItem('YourScore') || 0;
 //  Function to Return string for the match status
 const status = (a, b) => {
     if (a == 'scissor' && b == 'paper' || a == 'paper' && b == 'scissor') {
-        return "Scissors cuts Paper";
+        return "Scissors cuts Paper" + " " + a + b;
     }
     if (a == 'paper' && b == 'rock' || a == 'rock' && b == 'paper') {
-        return "Paper covers Rock";
+        return "Paper covers Rock" + " " + a + b;
     }
     if (a == 'rock' && b == 'lizard' || a == 'lizard' && b == 'rock') {
-        return "Rock crushes Lizard";
+        return "Rock crushes Lizard" + " " + a + b;
     }
     if (a == 'lizard' && b == 'spock' || a == 'spock' && b == 'lizard') {
-        return "Lizard poisons Spock";
+        return "Lizard poisons Spock" + " " + a + b;
     }
     if (a == 'spock' && b == 'scissor' || a == 'scissor' && b == 'spock') {
-        return "Spock smashes Scissors";
+        return "Spock smashes Scissors" + " " + a + b;
     }
     if (a == 'scissor' && b == 'lizard' || a == 'lizard' && b == 'scissor') {
-        return "Scissors decapitates Lizard";
+        return "Scissors decapitates Lizard" + " " + a + b;
     }
     if (a == 'lizard' && b == 'paper' || a == 'paper' && b == 'lizard') {
-        return "Lizard eats Paper";
+        return "Lizard eats Paper" + " " + a + b;
     }
     if (a == 'paper' && b == 'spock' || a == 'spock' && b == 'paper') {
-        return "Paper disproves Spock";
+        return "Paper disproves Spock" + " " + a + b;
     }
     if (a == 'spock' && b == 'rock' || a == 'rock' && b == 'spock') {
-        return "Spock vaporizes Rock";
+        return "Spock vaporizes Rock" + " " + a + b;
     }
     if (a == 'rock' && b == 'scissor' || a == 'scissor' && b == 'rock') {
-        return "Rock crushes Scissors";
+        return "Rock crushes Scissors" + " " + a + b;
     }
     if (a == b) {
-        return "it's a tie"
+        return "it's a tie" + " " + a + b;
     }
     // console.log(a + b)
 }
@@ -73,6 +73,8 @@ document.addEventListener('click', (event) => {
         // h.innerHTML = humain;
         h.id = humain;
         // check If it's a tie
+        console.log(status(p.id, h.id))
+
         if (p.id == humain) {
             // console.log("this is a tie")
         } else {
@@ -91,7 +93,6 @@ document.addEventListener('click', (event) => {
                 p.id == 'lizard' && h.id == "paper"
             ) {
                 // console.log("PC WIN ");
-                console.log(status(p.id, h.id))
                 c.innerHTML++;
                 localStorage.setItem('ComputerScore', c.innerHTML)
                     // If not than Player Wins
@@ -102,10 +103,12 @@ document.addEventListener('click', (event) => {
             }
         }
         // add class for the winning team
-        if (y.innerHTML > c.innerHTML) {
+        if (Number(y.innerHTML) > Number(c.innerHTML)) {
+            // console.log('debugY:' + y.innerHTML + "." + c.innerHTML)
             y.classList.add("win");
             c.classList.remove("win");
         } else {
+            // console.log('debugN:' + y.innerHTML + "." + c.innerHTML)
             c.classList.add("win");
             y.classList.remove("win");
         }
