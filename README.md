@@ -44,6 +44,8 @@ Rock–paper–scissors (also known as scissors-paper-rock or other  variants) i
 
 
 ### Built With
+HTML 
+SCSS
 Plain Javascript
 
 
