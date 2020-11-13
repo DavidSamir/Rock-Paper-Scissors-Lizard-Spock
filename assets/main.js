@@ -14,6 +14,14 @@ c.innerHTML = localStorage.getItem('ComputerScore') || 0;
 y.innerHTML = localStorage.getItem('YourScore') || 0;
 
 
+// check if this is the user first time 
+FirstTime = localStorage.getItem('FirstTime');
+console.log(FirstTime)
+if (FirstTime == true || FirstTime == 'true') {
+    document.querySelector('html').classList.remove("FirstTime");
+}
+
+
 //  Function to Return string for the match status
 const status = (a, b) => {
     if (a == 'scissor' && b == 'paper' || a == 'paper' && b == 'scissor') {
@@ -90,6 +98,9 @@ const showCard = (text, status) => {
 }
 
 document.addEventListener('click', (event) => {
+    document.querySelector('html').classList.remove("FirstTime");
+    localStorage.setItem('FirstTime', true)
+
     if (event.target.classList.contains('btn')) {
         const humain = (event.path[0].id);
         p.id = pc();
