@@ -16,7 +16,6 @@ y.innerHTML = localStorage.getItem('YourScore') || 0;
 
 // check if this is the user first time 
 FirstTime = localStorage.getItem('FirstTime');
-console.log(FirstTime)
 if (FirstTime == true || FirstTime == 'true') {
     document.querySelector('html').classList.remove("FirstTime");
 }
