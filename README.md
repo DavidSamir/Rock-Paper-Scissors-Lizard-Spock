@@ -15,8 +15,6 @@
     <a href="https://rock-paper-scissors-lizard-spock.davidsamir.com/">Here</a>
     or 
     <a href="https://rock.davidsamir.com/">Here</a>
-    or
-    <a href="https://hopeful-jennings-bdb25a.netlify.app/">Here</a>
   </p>
 </p>
 
