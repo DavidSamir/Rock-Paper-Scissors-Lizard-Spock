@@ -449,4 +449,11 @@ h1 + span.win {
 .endMatch.show {
   height: 100vh;
 }
+
+@media screen and (max-width: 650px) {
+  #rules .main-grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
 /*# sourceMappingURL=main.css.map */
