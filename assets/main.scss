@@ -4,6 +4,32 @@
     box-sizing: border-box;
 }
 
+// if new user 
+html.FirstTime {
+    body::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: #00000080;
+        position: absolute;
+    }
+    .inner-player--option {
+        border: 2px solid #fff;
+        border-radius: 0px 50px 50px 50px;
+    }
+    .inner-player--option::before {
+        content: 'Select One!';
+        position: absolute;
+        left: -127px;
+        padding: 10px 20px;
+        color: #000;
+        background: white;
+        border-radius: 50px 0px 0px 50px;
+        top: -2px;
+        font-weight: bold;
+    }
+}
+
 body {
     font-family: 'Ubuntu', sans-serif;
     background-color: #15133c;
@@ -119,6 +145,9 @@ body {
 .center {
     text-align: center;
 }
+.side--padding {
+    padding: 0 50px;
+}
 
 .player--options {
     display: grid;
@@ -232,6 +261,10 @@ span#spock,
 
 // add the hover title
 .inner-player--option {
+    border-color: transparent;
+    position: absolute;
+    right: 30px;
+    padding: 30px 20px;
     span#rock::after {
         content: "rock";
     }
