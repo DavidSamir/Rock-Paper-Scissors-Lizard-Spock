@@ -49,7 +49,6 @@ const status = (a, b) => {
     if (a == b) {
         return "You and the Computer choose the same thing";
     }
-    // console.log(a + b)
 }
 
 //  Function to Return random option 
@@ -94,13 +93,10 @@ document.addEventListener('click', (event) => {
     if (event.target.classList.contains('btn')) {
         const humain = (event.path[0].id);
         p.id = pc();
-        // p.innerHTML = p.id;
-        // h.innerHTML = humain;
         h.id = humain;
         // check If it's a tie
 
         if (p.id == humain) {
-            // console.log("this is a tie")
             showCard(status(p.id, h.id), "tie")
         } else {
             // list all the win cases for the PC
@@ -117,13 +113,11 @@ document.addEventListener('click', (event) => {
                 p.id == 'lizard' && h.id == "spock" ||
                 p.id == 'lizard' && h.id == "paper"
             ) {
-                // console.log("PC WIN ");
                 c.innerHTML++;
                 showCard(status(p.id, h.id), "lost")
                 localStorage.setItem('ComputerScore', c.innerHTML)
                     // If not than Player Wins
             } else {
-                // console.log("hunmai WIN");
                 showCard(status(p.id, h.id), "won")
                 y.innerHTML++;
                 localStorage.setItem('YourScore', y.innerHTML)
@@ -132,11 +126,9 @@ document.addEventListener('click', (event) => {
 
         // add class for the winning team
         if (Number(y.innerHTML) > Number(c.innerHTML)) {
-            // console.log('debugY:' + y.innerHTML + "." + c.innerHTML)
             y.classList.add("win");
             c.classList.remove("win");
         } else {
-            // console.log('debugN:' + y.innerHTML + "." + c.innerHTML)
             c.classList.add("win");
             y.classList.remove("win");
         }
