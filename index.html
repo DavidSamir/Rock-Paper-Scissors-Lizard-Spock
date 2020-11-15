@@ -83,11 +83,7 @@
     <section class="main--wrapper side--padding">
         <header>
             <h1>Rock Paper Scissors Lizard Spock</h1>
-            <div class="how-to--play">
-                <button id="showRules" class="btn-main">
-					What's the Rules
-				</button>
-            </div>
+
         </header>
     </section>
     <section class="main--wrapper side--padding scoreTotal">
@@ -108,9 +104,18 @@
     </section>
     <section class="main--wrapper side--padding">
         <div class="main-grid">
-            <div>
-                <h5><span class="p"></span> </h5>
+            <div class="computer--options">
+                <div class="computer--output">
 
+                    <h5><span class="p"></span> </h5>
+                </div>
+                <div class="inner-computer--option">
+                    <span class="rock"></span>
+                    <span class="paper"></span>
+                    <span class="scissor"></span>
+                    <span class="lizard"></span>
+                    <span class="spock"></span>
+                </div>
             </div>
             <div class="player--options">
                 <div class="player--output">
@@ -129,6 +134,7 @@
     </section>
     <section>
         <section class="center">
+            <button id="showRules" class="btn-main"> What's the Rules </button>
             <button class="btn-main" id="reset"> reset</button>
         </section>
 
