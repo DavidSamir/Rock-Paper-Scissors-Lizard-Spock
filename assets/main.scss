@@ -37,9 +37,12 @@ body {
 }
 
 .main--wrapper>header {
-    padding: 20px;
+    padding: 50px;
     border-bottom: 3px solid #fff;
     text-align: center;
+    h1 {
+        font-size: calc(17px + 1.7vw);
+    }
 }
 
 #rules {
@@ -111,7 +114,7 @@ body {
     margin-top: 20px;
     margin-bottom: -30px;
     h1 {
-        font-size: calc(20px + 2vw);
+        font-size: calc(12px + 1.2vw);
     }
 }
 
@@ -151,9 +154,14 @@ body {
 }
 
 .player--options {
-    display: grid;
-    grid-template-columns: 1fr auto;
     border-left: 2px solid #fff;
+}
+
+.computer--options,
+.player--options {
+    display: grid;
+    // grid-template-columns: 1fr auto;
+    // border-left: 2px solid #fff;
     div>span {
         width: 100px;
         height: 100px;
@@ -206,30 +214,35 @@ body {
 }
 
 span#rock,
+span.rock,
 .h#rock,
 .p#rock {
     background-image: url('/images/rock.png');
 }
 
 span#paper,
+span.paper,
 .h#paper,
 .p#paper {
     background-image: url('/images/paper.png');
 }
 
 span#scissor,
+span.scissor,
 .h#scissor,
 .p#scissor {
     background-image: url('/images/scissors.png');
 }
 
 span#lizard,
+span.lizard,
 .h#lizard,
 .p#lizard {
     background-image: url('/images/lizard.png');
 }
 
 span#spock,
+span.spock,
 .h#spock,
 .p#spock {
     background-image: url('/images/spock.png');
@@ -261,11 +274,18 @@ span#spock,
 }
 
 // add the hover title
+.inner-computer--option,
 .inner-player--option {
     border-color: transparent;
-    position: absolute;
+    // position: absolute;
     right: 30px;
     padding: 30px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.inner-player--option {
     span#rock::after {
         content: "rock";
     }
@@ -283,6 +303,13 @@ span#spock,
     }
 }
 
+.inner-computer--option {
+    opacity: .3;
+    span::after {
+        content: "Computer";
+    }
+}
+
 .h,
 .p {
     width: 50%;
@@ -293,6 +320,11 @@ span#spock,
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.h,
+.p {
+    background-image: url('/images/empty.png');
 }
 
 h1+span {
@@ -397,6 +429,8 @@ h1+span.win {
 
 .endMatch.show {
     height: 100vh;
+    transition: .3s ease-in;
+    // transition-delay: 1.5s;
 }
 
 @media screen and (max-width: 650px) {

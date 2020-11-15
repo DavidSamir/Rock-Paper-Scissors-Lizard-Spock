@@ -37,9 +37,13 @@ body {
 }
 
 .main--wrapper > header {
-  padding: 20px;
+  padding: 50px;
   border-bottom: 3px solid #fff;
   text-align: center;
+}
+
+.main--wrapper > header h1 {
+  font-size: calc(17px + 1.7vw);
 }
 
 #rules {
@@ -132,7 +136,7 @@ body {
 }
 
 .scoreTotal h1 {
-  font-size: calc(20px + 2vw);
+  font-size: calc(12px + 1.2vw);
 }
 
 .btn-main {
@@ -173,13 +177,16 @@ body {
 }
 
 .player--options {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
   border-left: 2px solid #fff;
 }
 
+.computer--options,
+.player--options {
+  display: -ms-grid;
+  display: grid;
+}
+
+.computer--options div > span,
 .player--options div > span {
   width: 100px;
   height: 100px;
@@ -201,6 +208,7 @@ body {
   padding: 10px;
 }
 
+.computer--options div > span::after,
 .player--options div > span::after {
   padding: 5px 0;
   width: 0;
@@ -217,6 +225,7 @@ body {
   background-color: #15133c;
 }
 
+.computer--options div > span:hover,
 .player--options div > span:hover {
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -225,16 +234,19 @@ body {
   opacity: 1 !important;
 }
 
+.computer--options div > span:hover::after,
 .player--options div > span:hover::after {
   width: 100px !important;
 }
 
+.computer--options div > span:active,
 .player--options div > span:active {
   -webkit-transform: scale(1.8) !important;
           transform: scale(1.8) !important;
   padding: 0;
 }
 
+.computer--options .inner-player--option:hover span,
 .player--options .inner-player--option:hover span {
   opacity: .7;
   -webkit-transform: scale(0.8);
@@ -243,30 +255,35 @@ body {
 }
 
 span#rock,
+span.rock,
 .h#rock,
 .p#rock {
   background-image: url("/images/rock.png");
 }
 
 span#paper,
+span.paper,
 .h#paper,
 .p#paper {
   background-image: url("/images/paper.png");
 }
 
 span#scissor,
+span.scissor,
 .h#scissor,
 .p#scissor {
   background-image: url("/images/scissors.png");
 }
 
 span#lizard,
+span.lizard,
 .h#lizard,
 .p#lizard {
   background-image: url("/images/lizard.png");
 }
 
 span#spock,
+span.spock,
 .h#spock,
 .p#spock {
   background-image: url("/images/spock.png");
@@ -297,11 +314,19 @@ span#spock,
   background-image: url("/images/spock-name.png");
 }
 
+.inner-computer--option,
 .inner-player--option {
   border-color: transparent;
-  position: absolute;
   right: 30px;
   padding: 30px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .inner-player--option span#rock::after {
@@ -324,6 +349,14 @@ span#spock,
   content: "spock";
 }
 
+.inner-computer--option {
+  opacity: .3;
+}
+
+.inner-computer--option span::after {
+  content: "Computer";
+}
+
 .h,
 .p {
   width: 50%;
@@ -334,6 +367,11 @@ span#spock,
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.h,
+.p {
+  background-image: url("/images/empty.png");
 }
 
 h1 + span {
@@ -448,6 +486,8 @@ h1 + span.win {
 
 .endMatch.show {
   height: 100vh;
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in;
 }
 
 @media screen and (max-width: 650px) {
