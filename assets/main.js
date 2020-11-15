@@ -15,10 +15,10 @@ y.innerHTML = localStorage.getItem('YourScore') || 0;
 
 
 // check if this is the user first time 
-FirstTime = localStorage.getItem('FirstTime');
-if (FirstTime == true || FirstTime == 'true') {
-    document.querySelector('html').classList.remove("FirstTime");
-}
+// FirstTime = localStorage.getItem('FirstTime');
+// if (FirstTime == true || FirstTime == 'true') {
+//     document.querySelector('html').classList.remove("FirstTime");
+// }
 
 
 //  Function to Return string for the match status
